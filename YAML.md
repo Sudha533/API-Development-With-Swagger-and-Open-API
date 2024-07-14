@@ -37,3 +37,48 @@ name, age, and address are keys under person.
 address itself contains a nested structure with street, city, and state.
 phone_numbers is a list containing two items, each with type and number keys.
 YAML's readability and simplicity make it a popular choice for configuration files and data serialization.
+
+YAML Structure
+To begin exploring YAML, let’s take a look at an example YAML file called example.yaml:
+```
+---
+# Our first YAML document
+bottle: wine
+capitals:
+  Japan: Tokyo
+  Argentina: Buenos Aires
+oceans:
+  - Indian
+  - Atlantic
+  - Arctic
+  - Pacific
+…
+```
+
+
+A YAML document begins with three dashes (---) and ends with three dots (…). These characters can separate multiple YAML documents within a single file. In a YAML file with a singular document (e.g., the above example), most parsers treat these characters as optional.
+
+The second line begins with #, which makes it a comment. Comments are ignored by parsers but are helpful since YAML files are often shared by different developers and can provide insight into the document’s purpose.
+
+The bulk of this YAML document consists of mappings or key-value pairs, which are separated by a colon and a space (: ). Every key must be a string and must be unique. Values can be nested mappings, as is the case with the value of capitals. They can also be sequences, as with the value of oceans, or scalars, as with the value of bottle. We’ll learn more about these data types a bit later in this article.
+
+The use of whitespace is a crucial aspect of YAML. Notice how a line break separates each mapping. When objects are nested, indentation indicates which objects are a part of the same value. Indentation must consist of one or more spaces. Tabs, however, are forbidden in YAML.
+
+While not explicitly shown, note that YAML files should end with the extension .yaml or .yml.
+
+### Sequences
+YAML sequences look a bit like lists or arrays in programming languages. They can contain any mix of data types, including nested sequences or mappings. Sequences are usually displayed on multiple lines, where each element begins with a dash, followed by a space, and ends with a line break. Take a look at an example:
+```
+fish:
+  - Tuna
+  - Trout
+  - Salmon
+numbers:
+  - pi
+  - 7
+  - 1.1
+```
+Sequences can also be written on a single line surrounded by brackets. In this case, elements are separated by a comma and a space, like this:
+```
+planets: [Mercury, Venus, Mars]
+```
